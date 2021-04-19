@@ -12,7 +12,7 @@ BEGIN
         write('Write a sentence'); read(sentence);
     UNTIL (sentence[sentence.length()] == '.')
     
-    FOR i FROM 1 TO sentence.length()-1 step  DO
+    FOR i FROM 0 TO sentence.length()-2 step  DO
         IF (sentence[i] == ' ') THEN
             nbr_words := nbr_words + 1;
             nbr_spaces := nbr_spaces + 1;
