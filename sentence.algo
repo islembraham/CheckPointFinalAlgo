@@ -5,6 +5,7 @@ VAR
     sentence : STRING;
     nbr_words : INTEGER := 0;
     nbr_vowels : INTEGER := 0;
+    nbr_spaces : INTEGER := 0;
 
 BEGIN
     REPEAT
@@ -14,13 +15,14 @@ BEGIN
     FOR i FROM 1 TO sentence.length()-1 step  DO
         IF (sentence[i] == ' ') THEN
             nbr_words := nbr_words + 1;
+            nbr_spaces := nbr_spaces + 1;
         ELSE_IF (sentence[i] == "a"||"e"||"i"||"o"||"u") THEN
             nbr_vowels := nbr_vowels + 1;
         ELSE nbr_words; nbr_vowels;
         END_IF
     END_FOR
 
-    write('The length of the sentence is ', +sentence.length() );
+    write('The number of characters except spaces is ', +sentence.length()-1-nbr_spaces );
     write('The number of words in the sentence is ', +nbr_words );
     write('The number of vowels in the sentence is ', +nbr_vowels );
 
