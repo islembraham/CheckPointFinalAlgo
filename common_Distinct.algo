@@ -1,0 +1,63 @@
+// First Exo  Sum of Common/distinct elements (JS / Algo)
+const sumCommon = (arr1 = [], arr2 = []) => {
+   let sum = 0;
+   for(let i = 0; i < arr1.length; i++){
+      const el = arr1[i];
+      const ind2 = arr2.indexOf(el) // search index
+      
+      if(ind2 !== -1){   // if(ind2 == -1) ==> distinct
+         arr2.splice(ind2, 1) // splice element
+        
+         sum += el;
+      };
+   };
+   return sum*2;  // return sum if distinct
+};
+console.log(sumCommon(arr1, arr2));
+
+
+// Second exo with hash
+function findSum(array A, array B, let n)
+{  
+    // unordered hashtable to store count of elements
+
+    unordered_hashtable<int,int> hash;
+     
+    // insert elements of A[] into hash
+    for(let i=0;i<n;i++)
+    {
+        if(hash.find(A[i])==hash.end())
+        {
+            hash.insert(make_pair(A[i],1)); //insert pair
+        }
+        else
+        {
+            hash[A[i]]++;
+        }
+    }
+     
+    // insert elements of B[] into hash
+    for(let i=0;i<n;i++)
+    {
+        if(hash.find(B[i])==hash.end())
+        {
+            hash.insert(make_pair(B[i],1));
+        }
+        else
+        {
+            hash[B[i]]++;
+        }
+    }
+ 
+    // calculate overlapped sum
+    var sum = 0;
+    for(auto itr = hash.begin(); itr!=hash.end(); itr++)
+    {
+        if((itr->second)==2)
+        {
+            sum += (itr->first)*2;
+        }
+    }
+     
+    return sum*2;
+}
