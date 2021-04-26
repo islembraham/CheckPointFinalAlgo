@@ -1,0 +1,15 @@
+function insertionSort(arr) {  // Algo JS
+    for (var i = 1, len = arr.length; i < len; i++) {
+        key = arr[i];
+        j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j]
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+    return arr;
+}
+
+var arr = [3,1,5,6,2];
+console.log(insertionSort(arr));
